@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.collapse.show {
+    visibility: visible;
+}
+.accordion-button.collapsed::after {
+    background: url("./assets/landing-page-image/Freccetta_sito.svg");
+    width: 40px;
+    height: 40px;
+}
+.accordion-button:not(.collapsed)::after {
+    background: url("./assets/landing-page-image/Freccetta_sito.svg");
+    width: 40px;
+    height: 40px;
+}
+
+.accordion-button:after {
+    order: -1;
+    margin-left: 0;
+    margin-right: 0.5em;
+}
+
+.accordion-button:not(.collapsed) {
+    color: none !important;
+    background-color: #ece7d3 !important;
+}
+
+.accordion-button:link,
+.accordion-button:visited,
+.accordion-button:hover,
+.accordion-button:active {
+    background-color: #ece7d3;
+    text-decoration: none !important;
+    border: hidden !important;
+    border: none !important;
+    box-shadow: 0px !important;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: none !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #ece7d3 !important;
+}
+
+.d-flex {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.card {
+    flex: 0 0 calc(33.3333% - 1rem);
+    margin: 0.5rem;
+    scroll-snap-align: start;
+}
+
+.multi-item-carousel .carousel-item {
+    margin-right: 0;
+    position: relative;
+    display: none;
+    float: left;
+}
+
+.multi-item-carousel .carousel-item.active {
+    display: block;
+}
+
+.multi-item-carousel .carousel-item-start {
+    margin-right: 15px;
+}
+
+.multi-item-carousel .carousel-item-end {
+    margin-left: 15px;
+}
+
+.multi-item-carousel .carousel-item-next:not(.carousel-item-start),
+.multi-item-carousel .active.carousel-item-end {
+    transform: translateX(calc(100% + 15px));
+}
+
+.multi-item-carousel .carousel-item-prev:not(.carousel-item-end),
+.multi-item-carousel .active.carousel-item-start {
+    transform: translateX(calc(-100% - 15px));
+}
+
+.multi-item-carousel .carousel-item-next,
+.multi-item-carousel .carousel-item-prev {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: calc((100% - 45px) / 4);
+}
+
+.multi-item-carousel .carousel-item-prev {
+    left: 0;
+}
+
+.multi-item-carousel .carousel-item-next {
+    right: 0;
+}
